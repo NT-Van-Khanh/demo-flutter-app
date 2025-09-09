@@ -1,0 +1,5 @@
+{
+    "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+    "github.copilot.nextEditSuggestions.fixes": false,
+    "github.copilot.editor.enableCodeActions": false
+}

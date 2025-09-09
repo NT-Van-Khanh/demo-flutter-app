@@ -1,0 +1,31 @@
+{
+  "@@locale": "vi",
+  "helloWorld": "Xin chào thế giới",
+  "login": "Đăng nhập", 
+  "home": "Trang chủ",
+  "favorites": "Yêu thích",
+  "weather": "Thời tiết",
+  "settings": "Cài đặt",
+  "language": "Ngôn ngữ",
+  "currentLanguage":  "Tiếng Việt",
+  
+  "langEnglish": "English",
+  "langVietnamese": "Tiếng Việt",
+  "weather_searchLocationLabel": "Tìm kiếm vị trí",
+  "weather_searchLocationHint": "Nhập vị trí",
+
+  "features": "Tính năng",
+  "theme": "Giao diện",
+  "darkTheme": "Tối",
+  "lightTheme": "Sáng",
+  "fontSize": "Cỡ chữ",
+  "security": "Bảo mật & Chính sách",
+  "information": "Thông tin",
+  "calendar": "Lịch dương",
+
+  "notification": "Thông báo",
+  "username": "Tên đăng nhập",
+  "password": "Mật khẩu",
+  "login": "Đăng nhập",
+  "loginWithGoogle": "Đăng nhập với Google"
+}

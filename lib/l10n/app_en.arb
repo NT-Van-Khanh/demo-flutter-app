@@ -1,0 +1,31 @@
+{
+  "@@locale": "en",
+  "helloWorld": "Hello World",
+  "login": "Login",
+  "home": "Home",
+  "favorites": "Favorites",
+  "weather": "Weather",
+  "settings": "Settings",
+  "language": "Language",
+  "currentLanguage":  "English",
+
+  "langEnglish": "English",
+  "langVietnamese": "Tiếng Việt",
+  "weather_searchLocationLabel": "Location",
+  "weather_searchLocationHint": "Enter the location",
+
+  "features": "Features",
+  "theme": "Theme",
+  "darkTheme": "Dark",
+  "lightTheme": "Light",
+  "fontSize": "Font Size",
+  "security": "Primary & Security",
+  "information": "Information",
+  "calendar": "Calendar",
+  
+  "notification": "Message",
+  "username": "Username",
+  "password": "Password",
+  "login": "Login",
+  "loginWithGoogle": "Login with Google"
+}

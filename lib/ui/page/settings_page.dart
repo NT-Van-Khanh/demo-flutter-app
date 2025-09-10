@@ -4,8 +4,9 @@ import 'package:b1_first_flutter_app/l10n/app_localizations.dart';
 import 'package:b1_first_flutter_app/ui/page/animation/animation_page.dart';
 import 'package:b1_first_flutter_app/ui/page/button_page.dart';
 import 'package:b1_first_flutter_app/ui/page/calendar_page.dart';
+import 'package:b1_first_flutter_app/ui/page/countdown_timer_page.dart';
 import 'package:b1_first_flutter_app/ui/page/input_page.dart';
-import 'package:b1_first_flutter_app/ui/page/music_playback_page.dart';
+import 'package:b1_first_flutter_app/ui/page/audio/audio_playback_page.dart';
 import 'package:b1_first_flutter_app/ui/page/todo_list_page.dart';
 import 'package:b1_first_flutter_app/provider/auth_state.dart';
 import 'package:b1_first_flutter_app/provider/my_app_state.dart';
@@ -17,38 +18,51 @@ class SettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appLoc =  AppLocalizations.of(context)!;
     var authState = context.watch<AuthProvider>();
     var settingItems = [
       SettingItem(
-        title: AppLocalizations.of(context)!.fontSize,
+        title: appLoc.fontSize,
         icon: Icons.format_size,
       ),
       SettingItem(
-        title: AppLocalizations.of(context)!.security,
+        title: appLoc.security,
         icon: Icons.security,
       ),
     ];
 
     var featureItems = [
       SettingItem(
-        title: AppLocalizations.of(context)!.information,
+        title: appLoc.information,
         icon: Icons.person,
       ),
       SettingItem(
-        title: "Media Playback",
+        title: appLoc.playAudio,
         icon: Icons.my_library_music,
-        widget: MusicPlaybackPage(),
+        widget: AudioPlaybackPage(),
+      ),
+      SettingItem(
+        title: appLoc.countdownTimer,
+        icon: Icons.alarm,
+        widget: CountdownTimerPage(),
       ),
       SettingItem(
         title: "Todo List",
-        icon: Icons.check_box_outlined,
+        icon: Icons.check_box,
         widget: TodoListPage(),
       ),
       SettingItem(
-        title: AppLocalizations.of(context)!.calendar,
+        title: appLoc.calendar,
         icon: Icons.calendar_month_outlined,
         widget: CalendarPage(),
       ),
+      
+      SettingItem(
+        title: "Test Input",
+        icon: Icons.input_outlined,
+        widget: InputPage(),
+      ),
+
       SettingItem(
         title: "Test Layout",
         icon: Icons.layers_outlined,
@@ -57,11 +71,6 @@ class SettingsPage extends StatelessWidget {
         title: "Test Button",
         icon: Icons.layers_outlined,
         widget: ButtonPage(),
-      ),
-      SettingItem(
-        title: "Test Input",
-        icon: Icons.input,
-        widget: InputPage(),
       ),
       
       SettingItem(
@@ -74,18 +83,24 @@ class SettingsPage extends StatelessWidget {
 
     return  Scaffold(
       appBar: AppBar(
-        
         title: Text(AppLocalizations.of(context)!.settings,
           style: TextStyle(
             fontWeight: FontWeight.w800,
-            // color: Theme.of(context).colorScheme.onTertiary,
           ),
         ),
         actions: [
-          IconButton(
-            
-            onPressed: ()=>{authState.logout()}, 
-            icon: Icon(Icons.logout)),
+          Row(
+            children: [
+              IconButton(
+                onPressed: ()=>{authState.logout()}, 
+                icon: Icon(Icons.logout)),
+              // Text("Logout",
+              // style: TextStyle(
+              //   fontWeight: FontWeight.w500,
+              // ),),
+              // SizedBox(width: 20,)
+            ],
+          ),
         ],
       ),
       body: Padding(

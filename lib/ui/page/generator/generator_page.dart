@@ -1,6 +1,6 @@
 import 'package:b1_first_flutter_app/provider/my_app_state.dart';
-import 'package:b1_first_flutter_app/ui/page/generator/big_card.dart';
-import 'package:b1_first_flutter_app/ui/widget/historiy_list_view.dart';
+import 'package:b1_first_flutter_app/ui/page/generator/components/big_card.dart';
+import 'package:b1_first_flutter_app/ui/page/generator/components/historiy_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

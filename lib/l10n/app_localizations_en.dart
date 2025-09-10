@@ -79,4 +79,22 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get loginWithGoogle => 'Login with Google';
+
+  @override
+  String get playAudio => 'Play Audio';
+
+  @override
+  String get countdownTimer => 'Chronometer';
+
+  @override
+  String get start => 'Start';
+
+  @override
+  String get stop => 'Stop';
+
+  @override
+  String get reset => 'Reset';
+
+  @override
+  String get startAgain => 'Start Again';
 }

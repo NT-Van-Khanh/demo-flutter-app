@@ -27,5 +27,11 @@
   "username": "Tên đăng nhập",
   "password": "Mật khẩu",
   "login": "Đăng nhập",
-  "loginWithGoogle": "Đăng nhập với Google"
+  "loginWithGoogle": "Đăng nhập với Google",
+  "playAudio": "Phát Audio",
+  "countdownTimer": "Bấm giờ",
+  "start": "Bắt đầu",
+  "stop": "Dừng",
+  "reset": "Quay lại",
+  "startAgain": "Bắt đầu lại"
 }

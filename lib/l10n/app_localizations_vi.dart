@@ -79,4 +79,22 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get loginWithGoogle => 'Đăng nhập với Google';
+
+  @override
+  String get playAudio => 'Phát Audio';
+
+  @override
+  String get countdownTimer => 'Bấm giờ';
+
+  @override
+  String get start => 'Bắt đầu';
+
+  @override
+  String get stop => 'Dừng';
+
+  @override
+  String get reset => 'Quay lại';
+
+  @override
+  String get startAgain => 'Bắt đầu lại';
 }

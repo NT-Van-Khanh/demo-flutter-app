@@ -27,5 +27,11 @@
   "username": "Username",
   "password": "Password",
   "login": "Login",
-  "loginWithGoogle": "Login with Google"
+  "loginWithGoogle": "Login with Google",
+  "playAudio": "Play Audio",
+  "countdownTimer": "Chronometer",
+  "start": "Start",
+  "stop": "Stop",
+  "reset": "Reset",
+  "startAgain": "Start Again"
 }

@@ -39,7 +39,7 @@ class _HistoriyListViewState extends State<HistoriyListView> {
               sizeFactor: animation,
               child: Center(
                 child: TextButton.icon(
-                  onPressed: () => appState.toggleFavorite(),
+                  onPressed: () => appState.toggleFavorite(pair),
                   icon: appState.favorites.contains(pair) ? 
                         Icon(Icons.favorite, size: 12,):
                         SizedBox(),

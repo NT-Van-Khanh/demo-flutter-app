@@ -10,3 +10,4 @@ linter:
     unnecessary_breaks: true
     use_key_in_widget_constructors: false
     constant_identifier_names: false
+    non_constant_identifier_names: false

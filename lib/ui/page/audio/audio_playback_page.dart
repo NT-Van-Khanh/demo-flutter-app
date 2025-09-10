@@ -1,19 +1,20 @@
 import 'dart:async';
 
 import 'package:b1_first_flutter_app/provider/music_playback_state.dart';
+import 'package:b1_first_flutter_app/ui/page/audio/components/audio_control_bar.dart';
+import 'package:b1_first_flutter_app/ui/page/audio/components/audio_duration_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:provider/provider.dart';
-import 'package:b1_first_flutter_app/util/local_datetime.dart';
 
-class MusicPlaybackPage extends StatefulWidget {
-  const MusicPlaybackPage({super.key});
+class AudioPlaybackPage extends StatefulWidget {
+  const AudioPlaybackPage({super.key});
 
   @override
-  State<MusicPlaybackPage> createState() => _MusicPlaybackPageState();
+  State<AudioPlaybackPage> createState() => _AudioPlaybackPageState();
 }
 
-class _MusicPlaybackPageState extends State<MusicPlaybackPage> {
+class _AudioPlaybackPageState extends State<AudioPlaybackPage> {
   bool isStop = true;
   final player = AudioPlayer();
   StreamSubscription<Duration>? _positionSub;
@@ -198,74 +199,6 @@ class _MusicPlaybackPageState extends State<MusicPlaybackPage> {
   }
 }
 
-class AudioControlBar extends StatelessWidget {
-  const AudioControlBar({
-    super.key,
-    required this.isPause,
-    required this.onPlayPause,
-    this.onNext,
-    this.onPrevious,
-  });
-
-  final bool isPause;
-  final VoidCallback onPlayPause;
-  final VoidCallback? onNext;
-  final VoidCallback? onPrevious;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Spacer(),
-        IconButton(
-          iconSize: 56,
-          onPressed: onPrevious,
-          icon: Icon(Icons.skip_previous_rounded)),
-        SizedBox(width: 3,),
-        IconButton(
-          iconSize: 64,
-          onPressed: onPlayPause,
-          icon: isPause ? Icon(Icons.play_circle_outline):Icon(Icons.pause_circle_outline_rounded)
-          ),
-        SizedBox(width: 3,),
-        IconButton(
-          iconSize: 56,
-          onPressed: onNext,
-          icon: Icon(Icons.skip_next_rounded)),
-        Spacer(),
-      ],
-    );
-  }
-}
-
-class AudioDurationSlider extends StatelessWidget {
-  const AudioDurationSlider({
-    super.key,
-    required this.musicPlaybackState,
-    required double duration,
-  }) : _timePlay = duration;
-
-  final MusicPlaybackState musicPlaybackState;
-  final double _timePlay;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Padding(
-            padding: const EdgeInsets.only(left:18.0),
-            child: Text(LocalDatetime.parseToMinutesSeconds(musicPlaybackState.duration)),
-          ),
-        Spacer(),
-          Padding(
-            padding: const EdgeInsets.only(right:18.0),
-            child: Text(LocalDatetime.parseToMinutesSeconds(_timePlay)),
-          ),
-      ]
-    );
-  }
-}
-
 class AudioIcon extends StatelessWidget {
   const AudioIcon({
     super.key,
@@ -307,21 +240,4 @@ class AudioTitleText extends StatelessWidget {
 }
 
    
-    // void runMusic() async{
-    //   await player.play();
-    //   timer?.cancel();
-    //   timer = Timer.periodic(Duration(seconds: 1), (t) {
-    //     if (currentTimeLine < _timePlay) {
-    //       musicPlaybackState.changeMusicTimeLine(currentTimeLine + 1);
-    //     } else {
-    //       t.cancel();
-    //       timer = null;
-    //     }
-    //   });
-    // }
-
-    // void stopMusic() async{
-    //   await player.pause();
-    //    timer?.cancel();  
-    //     timer = null; 
-    // }
+   

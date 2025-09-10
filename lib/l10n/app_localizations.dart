@@ -241,6 +241,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Login with Google'**
   String get loginWithGoogle;
+
+  /// No description provided for @playAudio.
+  ///
+  /// In en, this message translates to:
+  /// **'Play Audio'**
+  String get playAudio;
+
+  /// No description provided for @countdownTimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Chronometer'**
+  String get countdownTimer;
+
+  /// No description provided for @start.
+  ///
+  /// In en, this message translates to:
+  /// **'Start'**
+  String get start;
+
+  /// No description provided for @stop.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop'**
+  String get stop;
+
+  /// No description provided for @reset.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset'**
+  String get reset;
+
+  /// No description provided for @startAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Start Again'**
+  String get startAgain;
 }
 
 class _AppLocalizationsDelegate

@@ -9,7 +9,8 @@ import 'l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-
+import 'package:timezone/timezone.dart' as tz;
+import 'package:timezone/data/latest.dart' as tz;
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: ".env");
@@ -18,6 +19,10 @@ void main() async{
   final authState = AuthProvider();
   await appState.loadPrefs();
   await authState.loadLoginStatus();
+   tz.initializeTimeZones();
+
+  // Gán timezone mặc định
+  tz.setLocalLocation(tz.getLocation('Asia/Ho_Chi_Minh'));
   runApp(
      riverpod.ProviderScope(
        child: MultiProvider(

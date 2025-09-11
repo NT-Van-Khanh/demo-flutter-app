@@ -31,6 +31,7 @@ class _CountdownTimerPageState extends State<CountdownTimerPage> {
             timer = null;
             isPlay = false;
             resetDuration();
+            LocalNotifications.showNotificationAfter(10);
             LocalNotifications.showNotification();
           } 
         });

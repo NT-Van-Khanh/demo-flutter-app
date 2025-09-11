@@ -13,7 +13,7 @@ class Tab2 extends StatefulWidget {
 class _Tab2State extends State<Tab2> with AutomaticKeepAliveClientMixin{
   double size = 300;
   final random = Random();
-  changeImageSize(){
+  void changeImageSize(){
     setState(() {
        size = 50 + random.nextInt(300).toDouble();
     });

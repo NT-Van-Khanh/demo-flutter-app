@@ -1,4 +1,6 @@
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:permission_handler/permission_handler.dart';
+
 class LocalNotifications {
   static final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
     FlutterLocalNotificationsPlugin();
@@ -11,6 +13,10 @@ class LocalNotifications {
         InitializationSettings(android: androidInit);
 
     await flutterLocalNotificationsPlugin.initialize(initSettings);
+    
+    if (await Permission.notification.isDenied) {
+      await Permission.notification.request();
+    }
   }
 
   static Future<void> showNotification() async {

@@ -6,9 +6,9 @@ class WeatherState extends ChangeNotifier{
   List<Weather> _weathers = <Weather>[];
   String _weatherQuery = "Ho Chi Minh";
 
-  get currentWeather => _currentWeather;
-  get weathers => _weathers;
-  get weatherQuery => _weatherQuery;
+  Weather? get currentWeather => _currentWeather;
+  List<Weather> get weathers => _weathers;
+  String get weatherQuery => _weatherQuery;
 
   void addSearchHistory(){
     if(currentWeather == null) return;

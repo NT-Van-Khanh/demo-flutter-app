@@ -43,7 +43,7 @@ class _WeatherPageState extends State<WeatherPage> {
     var weathers = weatherState.weathers;
 
     Widget searchContent = weatherState.currentWeather !=null ?
-      WeatherCard(iconUrl: "https:${weatherState.currentWeather!.current.condition.icon}",weather: weatherState.currentWeather)
+      WeatherCard(iconUrl: "https:${weatherState.currentWeather!.current.condition.icon}",weather: weatherState.currentWeather!)
       :FutureBuilder(future: futureWeather, 
         builder: (context, snapshot){
           if (snapshot.connectionState == ConnectionState.waiting) {

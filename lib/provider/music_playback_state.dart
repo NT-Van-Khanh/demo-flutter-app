@@ -14,7 +14,7 @@ class MusicPlaybackState extends ChangeNotifier{
 
   double get duration => _duration;
   double get volume => _volume;
-  get audios => _audios;
+  List<String> get audios => _audios;
   int get currentIndex => _currentIndex;
 
 

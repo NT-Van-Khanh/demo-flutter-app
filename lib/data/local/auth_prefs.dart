@@ -18,7 +18,7 @@ class AuthPrefs {
   final _keyLoginType = SharedPrefsKeys.LOGIN_TYPE;
   
   Future<void> saveAuthToken(String authToken, LoginType loginType) async{
-    if (!PlatformUtil.isAndroid()&&!PlatformUtil.isIOS())  return;
+    if (!PlatformUtil.isAndroid()&&!PlatformUtil.isIOS()&&!PlatformUtil.isWeb())  return;
 
     final storage = const FlutterSecureStorage();
     final prefs = await SharedPreferences.getInstance();
@@ -29,7 +29,7 @@ class AuthPrefs {
   }
 
   Future<String?> getAuthToken() async{
-    if (!PlatformUtil.isAndroid()&&!PlatformUtil.isIOS())  return null;
+    if (!PlatformUtil.isAndroid()&&!PlatformUtil.isIOS()&&!PlatformUtil.isWeb())  return null;
     if (_cachedToken != null) return _cachedToken;
 
     final storage = const FlutterSecureStorage();
@@ -39,7 +39,7 @@ class AuthPrefs {
 
 
   Future<void> removeAuthToken() async{
-    if (!PlatformUtil.isAndroid()&&!PlatformUtil.isIOS())  return;
+    if (!PlatformUtil.isAndroid()&&!PlatformUtil.isIOS()&&!PlatformUtil.isWeb())  return;
     
     final prefs = await SharedPreferences.getInstance();
     final storage = const FlutterSecureStorage();
@@ -51,7 +51,7 @@ class AuthPrefs {
 
 
   Future<LoginType?> getLoginType() async{
-    if (!PlatformUtil.isAndroid()&&!PlatformUtil.isIOS())  return null;
+    if (!PlatformUtil.isAndroid()&&!PlatformUtil.isIOS()&&!PlatformUtil.isWeb())  return null;
     
     final prefs = await SharedPreferences.getInstance();
     final loginType = prefs.getString(_keyLoginType.value);

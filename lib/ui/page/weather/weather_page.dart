@@ -1,5 +1,5 @@
-import 'package:b1_first_flutter_app/data/model/weather/weather.dart';
 import 'package:b1_first_flutter_app/data/service/weather_api.dart';
+import 'package:b1_first_flutter_app/model/weather/weather.dart';
 import 'package:b1_first_flutter_app/provider/weather_state.dart';
 import 'package:b1_first_flutter_app/ui/page/weather/components/simple_weather_card.dart';
 import 'package:b1_first_flutter_app/ui/page/weather/components/weather_card.dart';

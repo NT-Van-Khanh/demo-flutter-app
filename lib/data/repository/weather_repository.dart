@@ -1,6 +1,6 @@
+import 'package:b1_first_flutter_app/model/weather/weather.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import '../model/weather/weather.dart';
 import '../service/weather_api_v2.dart';
 
 class WeatherRepository {

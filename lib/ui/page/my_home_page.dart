@@ -1,6 +1,6 @@
 import 'package:b1_first_flutter_app/l10n/app_localizations.dart';
+import 'package:b1_first_flutter_app/model/bar_item.dart';
 import 'package:flutter/material.dart';
-import 'package:b1_first_flutter_app/data/model/bar_item.dart';
 import 'package:b1_first_flutter_app/ui/page/favorites_page.dart';
 import 'package:b1_first_flutter_app/ui/page/generator/generator_page.dart';
 import 'package:b1_first_flutter_app/ui/page/settings_page.dart';

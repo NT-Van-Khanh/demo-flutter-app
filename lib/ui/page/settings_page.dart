@@ -1,16 +1,11 @@
 import 'package:b1_first_flutter_app/data/enum/language.dart';
-import 'package:b1_first_flutter_app/data/model/setting_item.dart';
 import 'package:b1_first_flutter_app/l10n/app_localizations.dart';
-import 'package:b1_first_flutter_app/ui/page/animation/animation_page.dart';
-import 'package:b1_first_flutter_app/ui/page/button_page.dart';
-import 'package:b1_first_flutter_app/ui/page/calendar_page.dart';
-import 'package:b1_first_flutter_app/ui/page/countdown_timer_page.dart';
-import 'package:b1_first_flutter_app/ui/page/input_page.dart';
-import 'package:b1_first_flutter_app/ui/page/audio/audio_playback_page.dart';
-import 'package:b1_first_flutter_app/ui/page/todo_list_page.dart';
+import 'package:b1_first_flutter_app/model/route_item.dart';
 import 'package:b1_first_flutter_app/provider/auth_state.dart';
 import 'package:b1_first_flutter_app/provider/my_app_state.dart';
+import 'package:b1_first_flutter_app/ui/routing/setting_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 class SettingsPage extends StatelessWidget {
@@ -20,66 +15,120 @@ class SettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final appLoc =  AppLocalizations.of(context)!;
     var authState = context.watch<AuthProvider>();
-    var settingItems = [
-      SettingItem(
+    // var settingItems = [
+    //   SettingItem(
+    //     title: appLoc.fontSize,
+    //     icon: Icons.format_size,
+    //   ),
+    //   SettingItem(
+    //     title: appLoc.security,
+    //     icon: Icons.security,
+    //   ),
+    // ];
+    // var featureItems = [
+    //   SettingItem(
+    //     title: appLoc.information,
+    //     icon: Icons.person,
+    //   ),
+    //   SettingItem(
+    //     title: appLoc.playAudio,
+    //     icon: Icons.my_library_music,
+    //     widget: AudioPlaybackPage(),
+    //   ),
+    //   SettingItem(
+    //     title: appLoc.countdownTimer,
+    //     icon: Icons.alarm,
+    //     widget: CountdownTimerPage(),
+    //   ),
+    //   SettingItem(
+    //     title: "Todo List",
+    //     icon: Icons.check_box,
+    //     widget: TodoListPage(),
+    //   ),
+    //   SettingItem(
+    //     title: appLoc.calendar,
+    //     icon: Icons.calendar_month_outlined,
+    //     widget: CalendarPage(),
+    //   ),
+      
+    //   SettingItem(
+    //     title: "Test Input",
+    //     icon: Icons.input_outlined,
+    //     widget: InputPage(),
+    //   ),
+
+    //   SettingItem(
+    //     title: "Test Layout",
+    //     icon: Icons.layers_outlined,
+    //   ),
+    //   SettingItem(
+    //     title: "Test Button",
+    //     icon: Icons.layers_outlined,
+    //     widget: ButtonPage(),
+    //   ),
+      
+    //   SettingItem(
+    //     title: "Test Animation",
+    //     icon: Icons.category,
+    //     widget: AnimationPage(),
+    //   ),
+    // ];
+
+    var routeSettingItems = [
+      RouteItem(
         title: appLoc.fontSize,
         icon: Icons.format_size,
+        route: SettingsRoutes.FONT_SIZE,
       ),
-      SettingItem(
+      RouteItem(
         title: appLoc.security,
         icon: Icons.security,
-      ),
+        route: SettingsRoutes.SECURITY,
+      )
     ];
 
-    var featureItems = [
-      SettingItem(
-        title: appLoc.information,
-        icon: Icons.person,
-      ),
-      SettingItem(
+    var routeFeatureItems = [
+      RouteItem(
         title: appLoc.playAudio,
         icon: Icons.my_library_music,
-        widget: AudioPlaybackPage(),
+        route: SettingsRoutes.AUDIO,
       ),
-      SettingItem(
+      RouteItem(
         title: appLoc.countdownTimer,
         icon: Icons.alarm,
-        widget: CountdownTimerPage(),
+        route: SettingsRoutes.COUNTDOWN,
       ),
-      SettingItem(
+      RouteItem(
         title: "Todo List",
         icon: Icons.check_box,
-        widget: TodoListPage(),
+        route: SettingsRoutes.TODO,
       ),
-      SettingItem(
+      RouteItem(
         title: appLoc.calendar,
         icon: Icons.calendar_month_outlined,
-        widget: CalendarPage(),
+        route: SettingsRoutes.CALENDAR,
       ),
-      
-      SettingItem(
+      RouteItem(
         title: "Test Input",
         icon: Icons.input_outlined,
-        widget: InputPage(),
+        route: SettingsRoutes.INPUT,
       ),
-
-      SettingItem(
+      RouteItem(
         title: "Test Layout",
         icon: Icons.layers_outlined,
+        route: SettingsRoutes.LAYOUT,
       ),
-      SettingItem(
+      RouteItem(
         title: "Test Button",
         icon: Icons.layers_outlined,
-        widget: ButtonPage(),
+        route: SettingsRoutes.BUTTON,
       ),
-      
-      SettingItem(
+      RouteItem(
         title: "Test Animation",
         icon: Icons.category,
-        widget: AnimationPage(),
+        route: SettingsRoutes.ANIMATION,
       ),
     ];
-
 
     return  Scaffold(
       appBar: AppBar(
@@ -109,8 +158,8 @@ class SettingsPage extends StatelessWidget {
           scrollDirection: Axis.vertical,
           child: Column(
             children: [
-              FeatureCard(featureItems: featureItems),
-              SettingCard(settingItems: settingItems),
+              FeatureCard(featureItems: routeFeatureItems),
+              SettingCard(routeItems: routeSettingItems),
             ],
           ),
         ),
@@ -122,10 +171,10 @@ class SettingsPage extends StatelessWidget {
 class SettingCard extends StatefulWidget {
   const SettingCard({
     super.key,
-    required this.settingItems,
+    required this.routeItems,
   });
 
-  final List<SettingItem> settingItems;
+  final List<RouteItem> routeItems;
 
   @override
   State<SettingCard> createState() => _SettingCardState();
@@ -187,7 +236,7 @@ class _SettingCardState extends State<SettingCard> {
                     ),
                   ),
                 ListTileLanguage(mounted: mounted),
-                for(final item in widget.settingItems)
+                for(final item in widget.routeItems)
                   ListTile(
                     leading: Icon(item.icon),
                     title: Text(item.title),
@@ -195,9 +244,10 @@ class _SettingCardState extends State<SettingCard> {
                     titleTextStyle: TextStyle(
                       fontSize: 18,
                     ),
-                    onTap: ()=> Navigator.push( context,
-                          MaterialPageRoute( builder: (context) => item.widget,),
-                      ),
+                    onTap: () => context.pushNamed(item.route),
+                    // onTap: ()=> Navigator.push( context,
+                    //       MaterialPageRoute( builder: (context) => item.widget,),
+                    //   ),
                   ),
                 ],
             ),
@@ -287,7 +337,7 @@ class FeatureCard extends StatelessWidget {
     required this.featureItems,
   });
 
-  final List<SettingItem> featureItems;
+  final List<RouteItem> featureItems;
 
   @override
   Widget build(BuildContext context) {
@@ -326,9 +376,10 @@ class FeatureCard extends StatelessWidget {
                   titleTextStyle: TextStyle(
                     fontSize: 18,
                   ),
-                  onTap: ()=> Navigator.push( context,
-                        MaterialPageRoute( builder: (context) => item.widget,),
-                    ),
+                  onTap: ()=> context.pushNamed(item.route),
+                  // onTap: ()=> Navigator.push( context,
+                  //       MaterialPageRoute( builder: (context) => item.widget,),
+                  //   ),
                 );
               },
             ),

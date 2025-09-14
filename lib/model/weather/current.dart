@@ -1,5 +1,4 @@
-
-import 'package:b1_first_flutter_app/data/model/weather/condition.dart';
+import 'package:b1_first_flutter_app/model/weather/condition.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'current.g.dart';

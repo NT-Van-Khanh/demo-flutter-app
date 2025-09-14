@@ -1,5 +1,5 @@
-import 'package:b1_first_flutter_app/data/model/weather/current.dart';
-import 'package:b1_first_flutter_app/data/model/weather/location.dart';
+import 'package:b1_first_flutter_app/model/weather/current.dart';
+import 'package:b1_first_flutter_app/model/weather/location.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'weather.g.dart';

@@ -1,6 +1,6 @@
+import 'package:b1_first_flutter_app/model/weather/weather.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
-import '../model/weather/weather.dart';
 
 part 'weather_api_v2.g.dart';
 

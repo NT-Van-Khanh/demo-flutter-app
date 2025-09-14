@@ -1,4 +1,4 @@
-import 'package:b1_first_flutter_app/data/model/weather/weather.dart';
+import 'package:b1_first_flutter_app/model/weather/weather.dart';
 import 'package:flutter/material.dart';
 
 class WeatherState extends ChangeNotifier{

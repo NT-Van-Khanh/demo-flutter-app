@@ -5,5 +5,4 @@ class SettingItem {
   final IconData icon;
   final Widget widget;
   SettingItem({required this.title, required this.icon, this.widget = const EmptyPage(),});
-
 }

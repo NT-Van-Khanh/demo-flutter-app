@@ -1,4 +1,4 @@
-import 'package:b1_first_flutter_app/data/model/todo.dart';
+import 'package:b1_first_flutter_app/model/todo.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class TodoListNotifier extends Notifier<List<Todo>> {
